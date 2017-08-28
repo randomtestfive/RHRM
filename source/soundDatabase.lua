@@ -143,6 +143,15 @@ function initializeCues()
   cue["MrUpbeatThree"] = function() return newSource("/resources/sfx/mrUpbeat/three.ogg") end
   cue["MrUpbeatFour"] = function() return newSource("/resources/sfx/mrUpbeat/four.ogg") end
   
+  cue["SpaceDanceTurn"] = function() return newSource("/resources/sfx/space dance/turn.ogg") end
+  cue["SpaceDanceRight"] = function() return newSource("/resources/sfx/space dance/right.ogg") end
+  cue["SpaceDanceHit"] = function() return newSource("/resources/sfx/space dance/hit.ogg") end
+  cue["SpaceDanceLets"] = function() return newSource("/resources/sfx/space dance/lets.ogg") end
+  cue["SpaceDanceSit"] = function() return newSource("/resources/sfx/space dance/sit.ogg") end
+  cue["SpaceDanceDown"] = function() return newSource("/resources/sfx/space dance/down.ogg") end
+  cue["SpaceDancePa"] = function() return newSource("/resources/sfx/space dance/pa.ogg") end
+  cue["SpaceDancePunch"] = function() return newSource("/resources/sfx/space dance/punch.ogg") end
+  
   cue["warioDeMamboOne"] = function() return newSource("/resources/sfx/wario de mambo/one.ogg") end
   cue["warioDeMamboTwo"] = function() return newSource("/resources/sfx/wario de mambo/two.ogg") end
   cue["warioDeMamboThree"] = function() return newSource("/resources/sfx/wario de mambo/three.ogg") end

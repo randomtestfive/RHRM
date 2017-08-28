@@ -747,6 +747,48 @@ function love.load()
       }
     },
     [13] = {
+      name = "space dance",
+      img = love.graphics.newImage("/resources/gfx/editor/icons/mrupbeat.png"),
+      blocks = {
+        {
+          name = "turn right",
+          length = 128,
+          cues = {
+            {name = "turn", x = 0, cueId = "SpaceDanceTurn"},
+            {name = "right", x = 64, cueId = "SpaceDanceRight"},
+          },
+          hits = {
+            {name = "hit",x = 64,cueId = "SpaceDanceHit",input = "pressA"},
+          }
+        },
+        {
+          name = "lets sit down",
+          length = 64+32,
+          cues = {
+            {name = "lets", x = 0, cueId = "SpaceDanceLets"},
+            {name = "sit", x = 32, cueId = "SpaceDanceSit"},
+            {name = "down", x = 64, cueId = "SpaceDanceDown"},
+          },
+          hits = {
+            {name = "hit",x = 64,cueId = "SpaceDanceHit",input = "pressB"},
+          }
+        },
+        {
+          name = "pa-pa-pa punch",
+          length = 128,
+          cues = {
+            {name = "pa", x = 0, cueId = "SpaceDancePa"},
+            {name = "pa", x = 32, cueId = "SpaceDancePa"},
+            {name = "pa", x = 64, cueId = "SpaceDancePa"},
+            {name = "punch", x = 64+32, cueId = "SpaceDancePunch"},
+          },
+          hits = {
+            {name = "hit",x = 64+32,cueId = "SpaceDanceHit",input = "pressAB"},
+          }
+        },
+      },
+    },
+    [14] = {
       name = "wario de mambo",
       hidden = true,
       blocks = {
