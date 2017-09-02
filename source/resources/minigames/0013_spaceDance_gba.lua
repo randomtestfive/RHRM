@@ -34,6 +34,9 @@ function lminigame()
     dancers[i].anim:addFrame("pa2",fw*2,fh*6,fw,fh,1000000)
     dancers[i].anim:addAnimation("punch1",0,fh*7,fw,fh,2,200)
     dancers[i].anim:addAnimation("punch2",fw*2,fh*7,fw,fh,5,100)
+    dancers[i].anim:addAnimation("hurt",0,fh*8,fw,fh,3,100)
+    dancers[i].anim:addFrame("hurt",fw*3,fh*8,fw,fh,1000)
+    dancers[i].anim:addFrame("hurt",fw*2,0,fw,fh,50)
     
     dancers[i].anim:setAnimation("idle")
     dancers[i].player = false
@@ -58,6 +61,7 @@ function uminigame(dt)
   
   if hit then
     if input["pressA"] then
+      print("a")
       dancers[3].anim:setAnimation("punch1")
     elseif input["pressRIGHT"] then
       dancers[3].anim:setAnimation("right1")
@@ -68,7 +72,6 @@ function uminigame(dt)
   
   --other dancers (and player)
   local animStart = false;
-  print("break")
   for i = 0, 3 do
     if dancers[i].anim:getCurrentAnimation() == "right1" and dancers[i].anim:getCurrentFrame() == 1 then
       dancers[i].anim:setAnimation("right2")
@@ -86,7 +89,7 @@ function uminigame(dt)
       elseif s.name == "right" and not dancers[i].player then
         dancers[i].anim:setAnimation("right1")
       elseif s.name == "right" and not hit and dancers[3].anim:getCurrentAnimation() == "turn" then
-        dancers[i].anim:setAnimation("idle")
+        dancers[i].anim:setAnimation("hurt")
       elseif s.name == "lets" then
         dancers[i].anim:setAnimation("lets")
       elseif s.name == "sit" then
@@ -95,7 +98,7 @@ function uminigame(dt)
         dancers[i].anim:setAnimation("down")
         animStart = true
       elseif s.name == "down" and not hit and dancers[3].anim:getCurrentAnimation() == "sit" then
-        dancers[i].anim:setAnimation("idle")
+        dancers[i].anim:setAnimation("hurt")
       elseif s.name == "pa1" then
         dancers[i].anim:setAnimation("pa1")
       elseif s.name == "pa2" then
@@ -104,15 +107,15 @@ function uminigame(dt)
         dancers[i].anim:setAnimation("punch1")
         animStart = true
       elseif s.name == "punch" and not hit and dancers[3].anim:getCurrentAnimation() == "pa1" then
-        dancers[i].anim:setAnimation("idle")
+        dancers[i].anim:setAnimation("hurt")
       end
       
     end
     
-    if not animStart and (dancers[i].anim:getCurrentAnimation() == "right2" or dancers[i].anim:getCurrentAnimation() == "down" or dancers[i].anim:getCurrentAnimation() == "punch2") and dancers[i].anim:getLength(dancers[i].anim:getCurrentAnimation())-1 == dancers[i].anim:getCurrentFrame() then
+    if not animStart and (dancers[i].anim:getCurrentAnimation() == "right2" or dancers[i].anim:getCurrentAnimation() == "down" or dancers[i].anim:getCurrentAnimation() == "punch2" or dancers[i].anim:getCurrentAnimation() == "hurt") and dancers[i].anim:getLength(dancers[i].anim:getCurrentAnimation())-1 == dancers[i].anim:getCurrentFrame() then
       dancers[i].anim:setAnimation("idle")
     end
-    print(dancers[i].anim:getCurrentFrame())
+    
     if dancers[i].anim:getCurrentAnimation() == "idle" and beat == 10 then
       dancers[i].anim:setFrame(0)  
     end
