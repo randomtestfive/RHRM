@@ -109,6 +109,16 @@ function love.keypressed(key,scancode,isRepeat)
       input["holdLEFT"] = true
     end
     
+    if key == "s" then
+      input["pressDOWN"] = true
+      input["holdDOWN"] = true
+    end
+    
+    if key == "w" then
+      input["pressUP"] = true
+      input["holdUP"] = true
+    end
+    
     if key == "r" then
       view.flipH = 1
       view.flipV = 1
@@ -252,6 +262,16 @@ function love.keyreleased(key)
     if key == "a" then
       input["releaseLEFT"] = true
       input["holdLEFT"] = false
+    end
+    
+    if key == "s" then
+      input["releaseDOWN"] = true
+      input["holdDOWN"] = false
+    end
+    
+    if key == "w" then
+      input["releaseUP"] = true
+      input["holdUP"] = false
     end
   end
 end
