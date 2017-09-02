@@ -758,7 +758,7 @@ function love.load()
             {name = "right", x = 64, cueId = "SpaceDanceRight"},
           },
           hits = {
-            {name = "hit",x = 64,cueId = "SpaceDanceHit",input = "pressA"},
+            {name = "right",x = 64,cueId = "SpaceDanceHit",input = "pressRIGHT"},
           }
         },
         {
@@ -770,20 +770,20 @@ function love.load()
             {name = "down", x = 64, cueId = "SpaceDanceDown"},
           },
           hits = {
-            {name = "hit",x = 64,cueId = "SpaceDanceHit",input = "pressB"},
+            {name = "down",x = 64,cueId = "SpaceDanceHit",input = "pressDOWN"},
           }
         },
         {
           name = "pa-pa-pa punch",
           length = 128,
           cues = {
-            {name = "pa", x = 0, cueId = "SpaceDancePa"},
-            {name = "pa", x = 32, cueId = "SpaceDancePa"},
-            {name = "pa", x = 64, cueId = "SpaceDancePa"},
+            {name = "pa1", x = 0, cueId = "SpaceDancePa"},
+            {name = "pa2", x = 32, cueId = "SpaceDancePa"},
+            {name = "pa1", x = 64, cueId = "SpaceDancePa"},
             {name = "punch", x = 64+32, cueId = "SpaceDancePunch"},
           },
           hits = {
-            {name = "hit",x = 64+32,cueId = "SpaceDanceHit",input = "pressAB"},
+            {name = "punch",x = 64+32,cueId = "SpaceDanceHit",input = "pressA"},
           }
         },
       },
