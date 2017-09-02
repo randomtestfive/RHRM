@@ -748,7 +748,7 @@ function love.load()
     },
     [13] = {
       name = "space dance",
-      img = love.graphics.newImage("/resources/gfx/editor/icons/mrupbeat.png"),
+      img = love.graphics.newImage("/resources/gfx/editor/icons/spaceDance.png"),
       blocks = {
         {
           name = "turn right",
