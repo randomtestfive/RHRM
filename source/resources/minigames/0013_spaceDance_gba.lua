@@ -61,7 +61,6 @@ function uminigame(dt)
   
   if hit then
     if input["pressA"] then
-      print("a")
       dancers[3].anim:setAnimation("punch1")
     elseif input["pressRIGHT"] then
       dancers[3].anim:setAnimation("right1")
@@ -132,7 +131,7 @@ function dminigame()
   love.graphics.rectangle("fill",0,0,view.width,view.height)
   setColorHex("ffffff")
   for i = 3, 0, -1 do
-    dancers[i].anim:draw(150+120*i,60,0,3,3) --TODO: do some actual math
+    dancers[i].anim:draw(math.floor(view.width/2+120*i)-260,math.floor(view.height/2-3*99/2),0,3,3) --TODO: do some actual math
   end
 end
 
